@@ -1,2 +1,5 @@
-__pychache__
-blogProjectEnv
+**/__pycache__/
+.pytest_cache
+protfolio-env
+.env
+.vscode

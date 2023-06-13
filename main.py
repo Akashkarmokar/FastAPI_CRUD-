@@ -1,10 +1,12 @@
-from fastapi import FastAPI
+import uvicorn
+from core.config import config
 
 
-app = FastAPI()
+def main():
+    uvicorn.run(
+        app='app.server:root_app',
+        reload= True if config.stage != 'production' else False
+    )
 
-@app.get('/')
-async def index():
-    return {
-        'data': { 'name': 'akash'}
-    }
+if __name__ == "__main__":
+    main()
